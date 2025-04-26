@@ -9,10 +9,10 @@ body {
 }
 :root {
     --a: #6d39c2;
-    --b: #188adb;
+    --b: #6D39C2;
     --s: #10cab7;
-    --c: #eee;
-    --amir: #e2e2e2;
+    --c: #f6f6f6;
+    --amir: #fff;
 }
 html{
     scroll-behavior: smooth;
@@ -160,7 +160,7 @@ header .container .links > i{
     font-size: 18px;
     font-weight: 600;
     padding: 15px 30px;
-    background-image: linear-gradient(to left,var(--b) 50%,transparent 50%);
+    background-image: linear-gradient(to left,var(--s) 50%,transparent 50%);
     background-size: 200%;
     cursor: pointer;
     border-radius: 5px;
@@ -264,7 +264,7 @@ header .container .links > i{
     text-align: center;
 }
 #feature .container .fe-box i{
-    color: var(--a);
+    color: var(--b);
     font-size: 40px;
 }
 #feature .container .fe-box i:hover{
@@ -283,7 +283,7 @@ header .container .links > i{
 }
 #feature .container .fe-box h3{
     margin: 20px 0;
-    color: var(--b);
+    color: #101010;
 }
 #feature .container .fe-box p{
     font-weight: 500;
@@ -323,7 +323,7 @@ header .container .links > i{
     transition: 0.2s ease-in;
     margin: 15px 0;
     position: relative;
-    background-image: linear-gradient(48deg, black, #188adb);
+    background-image: linear-gradient(48deg, black, #6d39c2);
 }
 .men  .product .pro img{
     width: 100%;
@@ -348,7 +348,7 @@ header .container .links > i{
 .men .des h4{
     padding-top: 10px;
     font-size: 22px ;
-    color: var(--b);
+    color: #fff;
 }
 .men .pro a {
     color: var(--b);
@@ -372,41 +372,55 @@ header .container .links > i{
 }
 /*end men*/
 /*start banner*/
-.banner {
-    height: 40vh;
-    background-image: url('../image/big.png');
+.banner-container {
+    height: 50vh;
+    background-image: url('../image/bg2.png');
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 50px 0;
+    padding: 30px ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
+}
+.banner {
     display: flex;
     flex-direction: column;
+    align-items: left;
     justify-content: center;
-    align-items: center;
     gap: 20px;
-    text-align: center;
+    text-align: left;
 }
-.banner h4{
-    color: white;
-    font-size: 45px;
+.banner h1 {
+    font-size: 60px;
+    color: var(--b);
+    letter-spacing: -3px;
+    opacity: 0.9;
+    margin: 0;
+}
+.banner h2 {
+    font-size: 35px;
+    font-weight: 400;
+    color: var(--s);
 }
 .banner p span{
-    color: var(--b);
-    background-color: #101010;
+    color: var(--a);
+    background-color: white;
     margin: 0 10px;
     border-radius: 50%;
     padding: 5px;
 }
 .banner p{
-    color: white;
+    color: #101010;
     font-size: 27px;
     line-height: 1.8;
 }
 .banner button{
+    color: white;
     font-size: 18px;
     font-weight: 600;
     padding: 15px 30px;
-    background-image: linear-gradient(to left,var(--b) 50%,transparent 50%);
+    background-image: linear-gradient(to left,white 50% ,var(--s) 50%);
     background-size: 200%;
     cursor: pointer;
     border-radius: 5px;
@@ -417,24 +431,33 @@ header .container .links > i{
 }
 .banner button:hover{
     background-position: 100%;
-    color: white;
+    color: #101010;
+}
+@media (max-width:991px) {
+    .banner-container img {
+        display: none;
+    }
+    .banner {
+        align-items: center;
+        text-align: center;
+    }
 }
 /*end banner*/
 
 /*start women*/
 .women .container > h1 {
-    color: var(--a);
+    color: var(--b);
 }
 
 .women .des h4{
-    color: var(--a);
+    color: #fff;
 }
 .women .pro a {
-    color: var(--a);
-    border: 1px solid var(--a);
+    color: var(--b);
+    border: 1px solid var(--b);
 }
 .women .container .product .pro{
-    background-image: linear-gradient(48deg, black, #6d39c2);
+    background-image: (48deg, black, #6d39c2);
 }
 /*end women*/
 /*start about*/
@@ -504,14 +527,14 @@ header .container .links > i{
 }
 .contact .container > h1{
     margin-bottom: 60px;
-    color: var(--a);
+    color: var(--b);
 }
 .contact .blog {
     display: flex;
     align-items: center;
     height: 60vh;
     flex-wrap: wrap;
-    background-color: var(--a);
+    background-color: var(--b);
     border-radius: 20px;
     gap: 30px;
 }
@@ -520,14 +543,14 @@ header .container .links > i{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    background-color: #101010;
+    background-color: #f6f6f6;
     height: 100%;
     width: max-content;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
 .contact .blog .icons i{
-    color: var(--a);
+    color: var(--b);
     font-size: 40px;
     margin: 20px;
 }
@@ -586,8 +609,8 @@ header .container .links > i{
     margin-top: 40px;
 }
 .contact .blog .place form button:hover {
-    background-color: #101010;
-    color: var(--a);
+    background-color: var(--s);
+    color: #fff;
 }
 @media (max-width:767px) {
     .contact .blog {

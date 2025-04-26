@@ -4,7 +4,7 @@
 // Database connection settings
 $host = 'localhost';
 $user_name = 'root';
-$db_pass = '';
+$db_pass = '1234';
 $db_name = 'vortex';
 
 // Create a new mysqli connection
