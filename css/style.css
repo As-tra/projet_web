@@ -9,7 +9,6 @@ body {
 }
 :root {
     --a: #6d39c2;
-    --b: #6D39C2;
     --s: #10cab7;
     --c: #f6f6f6;
     --amir: #fff;
@@ -24,7 +23,7 @@ html{
 }
 .container > h1{
     font-size: 60px;
-    color: var(--b);
+    color: var(--a);
     letter-spacing: -3px;
     opacity: 0.9;
     margin: 0;
@@ -264,7 +263,7 @@ header .container .links > i{
     text-align: center;
 }
 #feature .container .fe-box i{
-    color: var(--b);
+    color: var(--a);
     font-size: 40px;
 }
 #feature .container .fe-box i:hover{
@@ -359,7 +358,7 @@ header .container .links > i{
     position: absolute;
     bottom: 15px;
     right: 25px;
-    border: 1px solid var(--b);
+    border: 1px solid var(--a);
     transition: 0.5s ease;
 }
 .men .pro a:hover {
@@ -393,7 +392,7 @@ header .container .links > i{
 }
 .banner h1 {
     font-size: 60px;
-    color: var(--b);
+    color: var(--a);
     letter-spacing: -3px;
     opacity: 0.9;
     margin: 0;
@@ -446,15 +445,15 @@ header .container .links > i{
 
 /*start women*/
 .women .container > h1 {
-    color: var(--b);
+    color: var(--a);
 }
 
 .women .des h4{
     color: #fff;
 }
 .women .pro a {
-    color: var(--b);
-    border: 1px solid var(--b);
+    color: var(--a);
+    border: 1px solid var(--a);
 }
 .women .container .product .pro{
     background-image: (48deg, black, #6d39c2);
@@ -498,7 +497,7 @@ header .container .links > i{
 }
 .about .text h2{
     text-align: center;
-    color: var(--b);
+    color: var(--a);
     margin: 20px 0;
 }
 .about .text p:first-of-type{
@@ -508,7 +507,7 @@ header .container .links > i{
     margin-bottom: 10px;
 }
 .about .text hr{
-    border: solid 2px var(--b);
+    border: solid 2px var(--a);
 }
 .about .text p:last-of-type{
     line-height: 1.6;
@@ -527,14 +526,14 @@ header .container .links > i{
 }
 .contact .container > h1{
     margin-bottom: 60px;
-    color: var(--b);
+    color: var(--a);
 }
 .contact .blog {
     display: flex;
     align-items: center;
     height: 60vh;
     flex-wrap: wrap;
-    background-color: var(--b);
+    background-color: var(--a);
     border-radius: 20px;
     gap: 30px;
 }
@@ -550,7 +549,7 @@ header .container .links > i{
     border-bottom-left-radius: 20px;
 }
 .contact .blog .icons i{
-    color: var(--b);
+    color: var(--a);
     font-size: 40px;
     margin: 20px;
 }
@@ -680,7 +679,7 @@ footer .info .col p{
 footer .info .col .king {
     font-size: 25px;
     padding: 10px 0 20px;
-    color: var(--b);
+    color: var(--a);
 }
 footer .info .col a{
     text-decoration: none;
@@ -690,7 +689,7 @@ footer .info .col a{
     font-weight: 400;
 }
 footer .info .col a:hover{
-    color: var(--b);
+    color: var(--a);
 }
 footer .info .col .follow {
     margin-top: 20px;
@@ -706,10 +705,10 @@ footer .info .col .follow .icon i{
     cursor: pointer;
 }
 footer .info .col .follow .icon i:hover{
-    color: var(--b);
+    color: var(--a);
 }
 footer .info .install .row img {
-    border: 1px solid var(--b);
+    border: 1px solid var(--a);
     border-radius: 20px;
 }
 footer .info .install .row{
