@@ -140,14 +140,16 @@ $women_sneakers = fetchWomenSneakers($conn);
             </div>
         </div>
     </div>
-    <div class="banner-container">
-        <div class="banner">
+    <div class="banner">
+        <div class="container">
+            <div class="content">
             <h1>New Arrival</h1>
             <h2>PUBLIC HIGH GUM NATURAL</h2> 
             <p>Up to <span> 90%</span> Off- All Sneakers & Accessories</p>
             <button>Explore More</button>
+            </div>
+            <img src="image/sportbanner" alt="">
         </div>
-        <img src="image/sportbanner" alt="">
     </div>
     <div class="men women" id="women">
         <div class="container">

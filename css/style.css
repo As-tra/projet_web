@@ -350,7 +350,7 @@ header .container .links > i{
     color: #fff;
 }
 .men .pro a {
-    color: var(--b);
+    color: var(--a);
     background: #fafafa;
     font-size: 20px;
     padding: 10px;
@@ -371,18 +371,24 @@ header .container .links > i{
 }
 /*end men*/
 /*start banner*/
-.banner-container {
-    height: 50vh;
+.banner {
+    height: 52vh;
     background-image: url('../image/bg2.png');
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 30px ;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     width: 100%;
 }
-.banner {
+.banner .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.banner .container img {
+    height: 360px;
+    width: 480px;
+}
+.banner .container .content{
     display: flex;
     flex-direction: column;
     align-items: left;
@@ -390,31 +396,31 @@ header .container .links > i{
     gap: 20px;
     text-align: left;
 }
-.banner h1 {
+.banner .container .content h1 {
     font-size: 60px;
     color: var(--a);
     letter-spacing: -3px;
     opacity: 0.9;
     margin: 0;
 }
-.banner h2 {
+.banner .container .content h2 {
     font-size: 35px;
     font-weight: 400;
     color: var(--s);
 }
-.banner p span{
+.banner .container .content p span{
     color: var(--a);
     background-color: white;
     margin: 0 10px;
     border-radius: 50%;
     padding: 5px;
 }
-.banner p{
+.banner .container .content p{
     color: #101010;
     font-size: 27px;
     line-height: 1.8;
 }
-.banner button{
+.banner .container .content button{
     color: white;
     font-size: 18px;
     font-weight: 600;
@@ -428,15 +434,19 @@ header .container .links > i{
     transition: 0.7s;
     margin: 20px 0;
 }
-.banner button:hover{
+.banner .container .content button:hover{
     background-position: 100%;
     color: #101010;
 }
 @media (max-width:991px) {
-    .banner-container img {
+    .banner .container img {
         display: none;
     }
-    .banner {
+    .banner .container {
+        justify-content: center;
+    }
+
+    .banner .container .content {
         align-items: center;
         text-align: center;
     }
