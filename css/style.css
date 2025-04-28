@@ -372,7 +372,7 @@ header .container .links > i{
 /*end men*/
 /*start banner*/
 .banner {
-    height: 52vh;
+    height: 55vh;
     background-image: url('../image/bg2.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -385,8 +385,8 @@ header .container .links > i{
     height: 100%;
 }
 .banner .container img {
-    height: 360px;
-    width: 480px;
+    max-width: 450px;
+    max-height: 360px;
 }
 .banner .container .content{
     display: flex;
@@ -727,6 +727,7 @@ footer .info .install .row{
 footer .copyright{
     text-align: center;
 }
+
 @media (max-width: 767px) {
     footer {
         padding: 30px 15px;
