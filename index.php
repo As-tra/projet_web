@@ -35,7 +35,7 @@ $women_sneakers = fetchWomenSneakers($conn);
                     <li><a href="#about">About us</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li class="coffer"><a href="#"><i class="fa-solid fa-user"></i></a></li>
-                    <li class="coffer"><a href="#"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                    <li class="coffer"><a href="cart.php"><i class="fa-solid fa-bag-shopping"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -143,10 +143,10 @@ $women_sneakers = fetchWomenSneakers($conn);
     <div class="banner">
         <div class="container">
             <div class="content">
-            <h1>New Arrival</h1>
-            <h2>PUBLIC HIGH GUM NATURAL</h2> 
-            <p>Up to <span> 90%</span> Off- All Sneakers & Accessories</p>
-            <button>Explore More</button>
+                <h1>New Arrival</h1>
+                <h2>PUBLIC HIGH GUM NATURAL</h2>
+                <p>Up to <span> 90%</span> Off- All Sneakers & Accessories</p>
+                <button onclick="window.location.href='more_view.php';">Explore More</button>
             </div>
             <img src="image/sportbanner" alt="">
         </div>
@@ -155,7 +155,7 @@ $women_sneakers = fetchWomenSneakers($conn);
         <div class="container">
             <h1>Women Products</h1>
             <div class="product">
-            <?php
+                <?php
                 foreach ($women_sneakers as $product) {
                     echo '<div class="pro">';
                     echo "<img src='{$product['image_url']}' alt=''>";

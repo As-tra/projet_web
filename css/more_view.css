@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Cairo','sans-serif';
+    overflow-x: hidden;
+}
+:root {
+    --a: #6d39c2;
+    --s: #10cab7;
+    --c: #f6f6f6;
+    --amir: #fff;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/*responsive container*/
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.container > h1{
+    font-size: 60px;
+    color: var(--a);
+    letter-spacing: -3px;
+    opacity: 0.9;
+    margin: 0;
+}
+/*small screen*/
+@media (min-width:767px) {
+    .container {
+        width: 750px;
+    }
+}
+/*medium screen*/
+@media (min-width:970px) {
+    .container {
+        width: 950px;
+    }
+}
+/*small screen*/
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/*start header*/
+header {
+    padding: 25px 0;
+    background-image: linear-gradient(100deg,#6d39c2,#10cab7);
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .container .links ul{
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+header .container .links{
+    position: relative;
+}
+header .container .links ul li{
+    font-size: 18px;
+}
+header .container .links ul a{
+    text-decoration: none;
+    color: var(--c);
+    transition: 0.3s;
+    font-weight: 600;
+}
+header .container .links ul a:hover{
+    color: white;
+    text-decoration: underline;
+}
+header .container > i{
+    font-size: 22px;
+    color: white;
+}
+header .first {
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
+}
+header .container .links > i{
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+}
+/*resize for phone and small screnn*/
+@media (max-width:767px) {
+    header .container .links > i{
+        display: block;
+    }
+    header .container .links .coffer{
+        display: none;
+    }
+}
+@media (max-width:400px) {
+    header .container .links:hover ul{
+        width: 250px;
+        top: 50px;
+    }
+}
+/*end header*/
+
+/*start banner*/
+.more-banner {
+    background: #f6f6f6;
+}
+
+.more-banner .container .content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 25px  0 50px;
+    
+}
+.more-banner .container img {
+    display: inline-block;
+    width: 100px;
+    object-fit: fill;
+    padding-top: 25px ;
+}
+
+/*start banner*/
