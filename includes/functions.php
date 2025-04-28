@@ -36,5 +36,21 @@ function fetchWomenSneakers($conn){
 }
 
 
+function fetchProductById($conn, $id) {
+    $id = mysqli_real_escape_string($conn, $id);
+
+    $query = "SELECT * FROM Sneakers WHERE id = '$id' LIMIT 1";
+    $result = mysqli_query($conn, $query);
+
+    if (!$result) {
+        die("Error fetching product: " . mysqli_error($conn));
+    }
+
+    $product = mysqli_fetch_assoc($result);
+
+    return $product;
+}
+
+
 
 
