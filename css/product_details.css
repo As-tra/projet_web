@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.product-details-container .container {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-image {
+    flex: 1;
+    min-width: 300px;
+    width: 480px;
+}
+
+.product-image img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    aspect-ratio: 1.25;
+}
+
+.product-details {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.badge {
+    background: #F3B519;
+    color: black;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 20px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.product-name {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #858585;
+}
+
+.new-price {
+    color: var(--a);
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.sizes {
+    margin: 20px 0;
+}
+
+.sizes p {
+    margin-bottom: 10px;
+}
+
+.sizes button {
+    background: none;
+    border: 1px solid #858585;
+    padding: 8px 12px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+/* Selected size button */
+.sizes button.selected {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.buttons {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.buttons .general {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.buttons .heart {
+    padding: 0px;
+    width: 40px;
+    height: 40px;
+    color: var(--a);
+    background-color: white;
+    border-color: var(--a);
+    border-radius: 50%;
+}
+
+.add-to-cart {
+    background: white;
+    border: 2px solid var(--a);
+    color: var(--a);
+}
+
+.buy-now {
+    background: var(--a);
+    color: white;
+    border: none;
+
+}
+
+.details {
+    margin-top: 20px;
+    background: var(--a);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.description {
+    margin-top: 20px;
+}
+
+.description p {
+    margin: 10px 0px;
+}
+
+.details-list {
+    margin: 10px 0 30px;
+    padding-left: 20px;
+}
