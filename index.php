@@ -133,7 +133,8 @@ $women_sneakers = fetchWomenSneakers($conn);
                     echo '</div>';
                     echo '<h4>$' . $product['price']  . '</h4>';
                     echo '</div>';
-                    echo '<a href="#"><i class="fas fa-shopping-cart"></i></a>';
+                    $idProduct = $product['id'];
+                    echo '<a href="product_details.php?id=' . $idProduct . '"><i class="fas fa-shopping-cart"></i></a>';
                     echo '</div>';
                 }
                 ?>
@@ -169,7 +170,8 @@ $women_sneakers = fetchWomenSneakers($conn);
                     echo '</div>';
                     echo '<h4>' . $product['price'] . '</h4>';
                     echo '</div>';
-                    echo '<a href="#"><i class="fas fa-shopping-cart"></i></a>';
+                    $idProduct = $product['id'];
+                    echo '<a href="product_details.php?id=' . $idProduct . '"><i class="fas fa-shopping-cart"></i></a>';
                     echo '</div>';
                 }
                 ?>
