@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Method</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/payment_style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=League+Spartan:wght@300;400;600;700;800&family=Open+Sans:ital,wght@0,400;0,700;1,800&family=Poppins:ital,wght@0,200;0,400;0,500;0,600;1,200;1,300;1,400&family=Ubuntu:wght@500&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <i class="fa-solid fa-gem">Vortex</i>
+            <div class="links">
+                <i class="fa-solid fa-bars"></i>
+                <ul>
+                    <li><a href="#feature">Features</a></li>
+                    <li><a href="#men">Men</a></li>
+                    <li><a href="#women">Women</a></li>
+                    <li><a href="#about">About us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="coffer"><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                    <li class="coffer"><a href="#"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="payment-container">
+        <div class="container">
+                <h1>Payment Method</h1>
+                <hr>
+                <div class="payment-content">
+                    <form>
+                        <div class="form-group">
+                            <label>Shipping Address <span>*</span></label>
+                            <input type="text" placeholder="Jl. Bojong timur no 65, Bumi datar, kapuas">
+                        </div>
+                        <div class="form-group">
+                            <label>City <span>*</span></label>
+                            <select>
+                                <option>Bumi Indah</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>State / Province <span>*</span></label>
+                            <select>
+                                <option>Kutai</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Postal Code <span>*</span></label>
+                            <select>
+                                <option>City</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Card Number <span>*</span></label>
+                            <input type="password" placeholder="**** **** **** ****">
+                        </div>
+                        <div class="form-group">
+                            <label>Expiration Date<span>*</span> </label>
+                            <input type="text" placeholder="MM / YY">
+                        </div>
+                        <div class="form-group">
+                            <label>CVC <span>*</span></label>
+                            <input type="text" placeholder="CVC">
+                        </div>
+                    </form>
+                    <div class="order-summary">
+                        <h2>Order Summary</h2>
+                        <div class="summary-line">
+                            <span>Subtotal</span>
+                            <span>Rp 149.995</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Shipping</span>
+                            <span>Rp 33.000</span>
+                        </div>
+                        <div class="total">
+                            <span>Total</span>
+                            <span>Rp 149.995</span>
+                        </div>
+                        <button class="checkout-btn">Check out</button>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+</body>
+</html>

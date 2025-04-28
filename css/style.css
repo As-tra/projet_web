@@ -2,13 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border-style: none;
 }
 body {
     font-family: 'Cairo','sans-serif';
     overflow-x: hidden;
 }
 :root {
-    --a: #6d39c2;
+    --a: #643ab8;
     --s: #10cab7;
     --c: #f6f6f6;
     --amir: #fff;
@@ -125,7 +126,6 @@ header .container .links > i{
 /*end header*/
 /*start view*/
 .view {
-    /* background-color: black; */
     background-image: url('../image/bg.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -454,9 +454,6 @@ header .container .links > i{
 /*end banner*/
 
 /*start women*/
-.women .container > h1 {
-    color: var(--a);
-}
 
 .women .des h4{
     color: #fff;
