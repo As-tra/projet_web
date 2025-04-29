@@ -1,3 +1,11 @@
+<?php
+include_once "includes/database.php";
+include_once "includes/functions.php";
+
+$states = fetchStates($conn);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,45 +41,44 @@
                 <h1>Payment Method</h1>
                 <hr>
                 <div class="payment-content">
-                    <form>
+                    <form id="payment-form">
                         <div class="form-group">
                             <label>Shipping Address <span>*</span></label>
-                            <input type="text" placeholder="Jl. Bojong timur no 65, Bumi datar, kapuas">
-                        </div>
-                        <div class="form-group">
-                            <label>City <span>*</span></label>
-                            <select>
-                                <option>Bumi Indah</option>
-                                <option>Other</option>
-                            </select>
+                            <input type="text" name="address" placeholder="Jl. Bojong timur no 65, Bumi datar, kapuas">
                         </div>
                         <div class="form-group">
                             <label>State / Province <span>*</span></label>
-                            <select>
-                                <option>Kutai</option>
-                                <option>Other</option>
+                            <select name="state" id="state" required>
+                                <option value="">Select a State</option>
+                                <?php foreach ($states as $state): ?>
+                                    <option value="<?= $state['id'] ?>"><?= htmlspecialchars($state['name']) ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>City <span>*</span></label>
+                            <select name="city" id="city" required>
+                                <option value="">Select a City</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Postal Code <span>*</span></label>
-                            <select>
-                                <option>City</option>
-                                <option>Other</option>
-                            </select>
+                            <input type="text" name="postal_code" id="postal_code" readonly>
                         </div>
                         <div class="form-group">
                             <label>Card Number <span>*</span></label>
-                            <input type="password" placeholder="**** **** **** ****">
+                            <input type="password" name="card_number" placeholder="**** **** **** ****">
                         </div>
                         <div class="form-group">
                             <label>Expiration Date<span>*</span> </label>
-                            <input type="text" placeholder="MM / YY">
+                            <input type="text" name="expiry" placeholder="MM / YY">
                         </div>
                         <div class="form-group">
                             <label>CVC <span>*</span></label>
-                            <input type="text" placeholder="CVC">
+                            <input type="text" name="cvc" placeholder="CVC">
                         </div>
                     </form>
+
                     <div class="order-summary">
                         <h2>Order Summary</h2>
                         <div class="summary-line">
@@ -100,4 +107,47 @@
     </div>
     <script src="js/payment.js"></script>
 </body>
+<script>
+document.getElementById("state").addEventListener("change", function() {
+    const stateId = this.value;
+
+    // Reset city and postal code when state changes
+    document.getElementById("city").innerHTML = '<option value="">Select a City</option>';
+    document.getElementById("postal_code").value = '';  // Clear postal code
+
+    if (!stateId) {
+        return;
+    }
+
+    fetch(`get_cities.php?state_id=${stateId}`)
+        .then(res => res.json())
+        .then(data => {
+            const citySelect = document.getElementById("city");
+            data.forEach(city => {
+                const option = document.createElement("option");
+                option.value = city.id;
+                option.textContent = city.name;
+                citySelect.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error fetching cities:', error));
+});
+
+document.getElementById("city").addEventListener("change", function() {
+    const cityId = this.value;
+
+    if (!cityId) {
+        document.getElementById("postal_code").value = '';  // Clear postal code if no city is selected
+        return;
+    }
+
+    fetch(`get_postal_code.php?city_id=${cityId}`)
+        .then(res => res.text())
+        .then(postalCode => {
+            document.getElementById("postal_code").value = postalCode;
+        })
+        .catch(error => console.error('Error fetching postal code:', error));
+});
+</script>
+
 </html>

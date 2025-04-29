@@ -34,7 +34,7 @@ $women_sneakers = fetchWomenSneakers($conn);
                     <li><a href="#women">Women</a></li>
                     <li><a href="#about">About us</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li class="coffer"><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                    <li class="coffer"><a href="signup.html"><i class="fa-solid fa-user"></i></a></li>
                     <li class="coffer"><a href="cart.php"><i class="fa-solid fa-bag-shopping"></i></a></li>
                 </ul>
             </div>
