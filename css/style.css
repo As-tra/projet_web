@@ -156,8 +156,7 @@ header .container .links > i{
     margin: 0;
 }
 .view .text button{
-    font-size: 18px;
-    font-weight: 600;
+    
     padding: 15px 30px;
     background-image: linear-gradient(to left,var(--s) 50%,transparent 50%);
     background-size: 200%;
@@ -168,9 +167,19 @@ header .container .links > i{
     transition: 0.7s;
     margin-top: 40px;
 }
+.view .text button a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+}
 .view .text button:hover{
     background-position: 100%;
+    
+}
+.view .text button a:hover{
     color: white;
+    
 }
 .view .image{
     background-color: var(--a);

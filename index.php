@@ -47,7 +47,7 @@ $women_sneakers = fetchWomenSneakers($conn);
                 <h1>New Sneaker</h1>
                 <h2>Solde UP To 90%</h2>
                 <p>Available at <span>Vortex</span> Store</p>
-                <button>Shop Now</button>
+                <button><a href="#men">Shop Now</a></button>
             </div>
             <div class="image">
                 <img src="image/jordan.png" alt="">
