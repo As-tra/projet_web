@@ -41,8 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
             'quantity' => 1,
         ];
     }
-    header('Location: cart.php');
-    exit();
+    // header('Location: cart.php');
+    // exit();
 }
 ?>
 

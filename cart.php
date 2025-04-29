@@ -1,6 +1,22 @@
 <?php
 session_start();
-// print_r($_SESSION['cart']);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $product_id = $_POST['product_id'];
+
+    if (isset($_POST['increment'])) {
+        $_SESSION['cart'][$product_id]['quantity']++;
+    } elseif (isset($_POST['decrement'])) {
+        if ($_SESSION['cart'][$product_id]['quantity'] > 1) {
+            $_SESSION['cart'][$product_id]['quantity']--;
+        } else {
+            unset($_SESSION['cart'][$product_id]); // Remove item if quantity is 0
+        }
+    } elseif (isset($_POST['remove'])) {
+        unset($_SESSION['cart'][$product_id]);
+    }
+}
+
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
@@ -18,7 +34,7 @@ if (!isset($_SESSION['cart'])) {
     <link rel="stylesheet" href="css/cart.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=League+Spartan:wght@300;400;600;700;800&family=Open+Sans:ital,wght@0,400;0,700;1,800&family=Poppins:ital,wght@0,200;0,400;0,500;0,600;1,200;1,300;1,400&family=Ubuntu:wght@500&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <title>Shopping Car</title>
+    <title>Shopping Cart</title>
 </head>
 
 <body>
@@ -40,28 +56,38 @@ if (!isset($_SESSION['cart'])) {
         <h1 class="title">Shopping Cart</h1>
         <div class="cart">
             <div class="cart-items">
-                <?php
-                foreach ($_SESSION['cart'] as $product) {
-                    echo '<div class="cart-item">';
-                    echo '<input type="checkbox">';
-                    echo '<img src=' . $product['image_url'] . ' alt="Vantela Republic Low Black Gum">';
-                    echo '<div class="item-info">';
-                    echo '<p class="item-name">' . $product['name'] . '</p>';
-                    echo '<p class="item-price">';
-                    echo '<span class="old-price">Rp' . $product['old_price'] . '</span>';
-                    echo '<span class="new-price">Rp' . $product['price'] . '</span>';
-                    echo '</p>';
-                    echo '</div>';
-                    echo '<div class="quantity">';
-                    echo '<button>-</button>';
-                    echo '<span>' . $product['quantity'] . '</span>';
-                    echo '<button>+</button>';
-                    echo '</div>';
-                    echo '<i class="fa-solid fa-trash-can"></i>';
-                    echo '</div>';
-                }
-                ?>
-
+                <?php if (!empty($_SESSION['cart'])): ?>
+                    <?php foreach ($_SESSION['cart'] as $product_id => $product): ?>
+                        <div class="cart-item">
+                            <img src="<?php echo $product['image_url']; ?>" alt="<?php echo $product['name']; ?>">
+                            <div class="item-info">
+                                <p class="item-name"><?php echo $product['name']; ?></p>
+                                <p class="item-price">
+                                    <span class="new-price">$<?php echo number_format($product['price'], 2); ?></span>
+                                </p>
+                            </div>
+                            <div class="quantity">
+                                <form method="POST" action="" style="display:inline;">
+                                    <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
+                                    <button type="submit" name="decrement" class="quantity-btn">-</button>
+                                </form>
+                                <span><?php echo $product['quantity']; ?></span>
+                                <form method="POST" action="" style="display:inline;">
+                                    <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
+                                    <button type="submit" name="increment" class="quantity-btn">+</button>
+                                </form>
+                            </div>
+                            <form method="POST" action="" style="display:inline;">
+                                <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
+                                <button type="submit" name="remove" class="delete-btn">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </form>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p>Your cart is empty.</p>
+                <?php endif; ?>
             </div>
 
             <div class="order-summary">
@@ -75,11 +101,8 @@ if (!isset($_SESSION['cart'])) {
                 <p>Total: <span class="summary-price">$<?php echo number_format($total, 2); ?></span></p>
                 <button class="checkout-btn">Check out</button>
             </div>
-
         </div>
     </main>
-
-
 
 </body>
 
