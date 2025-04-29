@@ -41,7 +41,7 @@ if (!isset($_SESSION['cart'])) {
 
     <header>
         <div class="container">
-            <a class="first" href="index.php"><i class="fa-solid fa-gem">Vortex</i></a>
+            <i class="fa-solid fa-gem">Vortex</i>
             <div class="links">
                 <i class="fa-solid fa-bars"></i>
                 <ul>
@@ -52,7 +52,8 @@ if (!isset($_SESSION['cart'])) {
         </div>
     </header>
 
-    <main class="wrapper">
+    <main class="wrapper ">
+
         <h1 class="title">Shopping Cart</h1>
         <div class="cart">
             <div class="cart-items">
