@@ -146,5 +146,5 @@
     cursor: pointer;
 }
 #closePopup:hover {
-    background: #542ba0;
+    background: var(--a);
 }
