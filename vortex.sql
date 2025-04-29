@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 29, 2025 at 07:41 AM
+-- Generation Time: Apr 29, 2025 at 10:58 AM
 -- Server version: 8.0.40
 -- PHP Version: 8.3.14
 
@@ -35,16 +35,85 @@ CREATE TABLE IF NOT EXISTS `cities` (
   `postal_code` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `state_id` (`state_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `cities`
 --
 
 INSERT INTO `cities` (`id`, `name`, `state_id`, `postal_code`) VALUES
-(1, 'Bumi Indah', 1, '75123'),
-(2, 'Samarinda', 1, '75119'),
-(3, 'Jakarta Selatan', 2, '12560');
+(1, 'Tunis Centre', 1, '1000'),
+(2, 'Bab Bhar', 1, '1006'),
+(3, 'Carthage', 1, '2016'),
+(4, 'Ariana Ville', 2, '2080'),
+(5, 'Raoued', 2, '2081'),
+(6, 'La Soukra', 2, '2036'),
+(7, 'Ben Arous', 3, '2013'),
+(8, 'El Mourouj', 3, '2074'),
+(9, 'Hammam Lif', 3, '2050'),
+(10, 'Manouba', 4, '2010'),
+(11, 'Douar Hicher', 4, '2012'),
+(12, 'Mornaguia', 4, '2014'),
+(13, 'Nabeul', 5, '8000'),
+(14, 'Hammamet', 5, '8050'),
+(15, 'Kélibia', 5, '8090'),
+(16, 'Zaghouan', 6, '1100'),
+(17, 'Bir Mcherga', 6, '1121'),
+(18, 'Zriba', 6, '1131'),
+(19, 'Bizerte', 7, '7000'),
+(20, 'Mateur', 7, '7030'),
+(21, 'Sejnane', 7, '7011'),
+(22, 'Béja', 8, '9000'),
+(23, 'Nefza', 8, '9021'),
+(24, 'Testour', 8, '9050'),
+(25, 'Jendouba', 9, '8100'),
+(26, 'Bou Salem', 9, '8121'),
+(27, 'Tabarka', 9, '8110'),
+(28, 'Le Kef', 10, '7100'),
+(29, 'Nebeur', 10, '7121'),
+(30, 'Tajerouine', 10, '7131'),
+(31, 'Siliana', 11, '6100'),
+(32, 'Bou Arada', 11, '6121'),
+(33, 'Gaafour', 11, '6131'),
+(34, 'Sousse Médina', 12, '4000'),
+(35, 'Sousse Riadh', 12, '4021'),
+(36, 'Kalaa Kebira', 12, '4031'),
+(37, 'Monastir', 13, '5000'),
+(38, 'Sahline', 13, '5021'),
+(39, 'Bekalta', 13, '5031'),
+(40, 'Mahdia', 14, '5100'),
+(41, 'Bou Merdes', 14, '5121'),
+(42, 'Chebba', 14, '5131'),
+(43, 'Sfax Ville', 15, '3000'),
+(44, 'Sakiet Ezzit', 15, '3021'),
+(45, 'Gremda', 15, '3013'),
+(46, 'Kairouan', 16, '3100'),
+(47, 'Haffouz', 16, '3121'),
+(48, 'Sbikha', 16, '3131'),
+(49, 'Kasserine', 17, '1200'),
+(50, 'Sbeitla', 17, '1221'),
+(51, 'Fériana', 17, '1231'),
+(52, 'Sidi Bouzid', 18, '9100'),
+(53, 'Menzel Bouzaiane', 18, '9121'),
+(54, 'Regueb', 18, '9131'),
+(55, 'Gabès Ville', 19, '6000'),
+(56, 'Ghannouch', 19, '6011'),
+(57, 'Métouia', 19, '6021'),
+(58, 'Medenine', 20, '4100'),
+(59, 'Ben Gardane', 20, '4121'),
+(60, 'Zarzis', 20, '4131'),
+(61, 'Tataouine', 21, '3200'),
+(62, 'Remada', 21, '3221'),
+(63, 'Ghomrassen', 21, '3231'),
+(64, 'Gafsa', 22, '2100'),
+(65, 'El Ksar', 22, '2121'),
+(66, 'Métlaoui', 22, '2131'),
+(67, 'Tozeur', 23, '2200'),
+(68, 'Degache', 23, '2221'),
+(69, 'Hazoua', 23, '2231'),
+(70, 'Kebili', 24, '4200'),
+(71, 'Douz', 24, '4221'),
+(72, 'Souk Lahad', 24, '4231');
 
 -- --------------------------------------------------------
 
@@ -63,7 +132,14 @@ CREATE TABLE IF NOT EXISTS `payments` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `city_id` (`city_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `payments`
+--
+
+INSERT INTO `payments` (`id`, `address`, `city_id`, `card_number`, `exp_date`, `cvc`, `created_at`) VALUES
+(1, '30 rue baghded', 2, 'skancrub123', 'azerazer', 'azra', '2025-04-29 09:46:16');
 
 -- --------------------------------------------------------
 
@@ -118,15 +194,69 @@ CREATE TABLE IF NOT EXISTS `states` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `states`
 --
 
 INSERT INTO `states` (`id`, `name`) VALUES
-(1, 'Kutai'),
-(2, 'Jakarta');
+(1, 'Tunis'),
+(2, 'Ariana'),
+(3, 'Ben Arous'),
+(4, 'Manouba'),
+(5, 'Nabeul'),
+(6, 'Zaghouan'),
+(7, 'Bizerte'),
+(8, 'Béja'),
+(9, 'Jendouba'),
+(10, 'Kef'),
+(11, 'Siliana'),
+(12, 'Sousse'),
+(13, 'Monastir'),
+(14, 'Mahdia'),
+(15, 'Sfax'),
+(16, 'Kairouan'),
+(17, 'Kasserine'),
+(18, 'Sidi Bouzid'),
+(19, 'Gabès'),
+(20, 'Medenine'),
+(21, 'Tataouine'),
+(22, 'Gafsa'),
+(23, 'Tozeur'),
+(24, 'Kebili');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `full_name` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `dob` date NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `phone` varchar(50) DEFAULT NULL,
+  `city` varchar(100) DEFAULT NULL,
+  `address` text,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `full_name`, `username`, `dob`, `email`, `password`, `phone`, `city`, `address`, `created_at`) VALUES
+(1, 'Skander Jenhani', 'root', '2025-05-01', 'skandern0000@gmail.com', '$2y$10$rgaGM8jsmkC4NU6grCMgDuSZrXx8.X.L0m23QaoAGRvK7Q767k32K', '94415320', 'Choose', '30 rue baghded', '2025-04-29 09:56:10'),
+(4, 'Hidaya', 'lhodd', '2025-04-03', 'root@gmail.com', '$2y$10$CyUrxcdnOBd7BAuRCNaMUelaAl0BJ2K4/0Ev6Zg4cKlhKCj2YpaNe', '94415320', 'Choose', '30 rue baghded', '2025-04-29 09:58:57'),
+(5, 'assil', 'assilou', '2025-04-03', 'assil@gmail.com', '$2y$10$a1JpHmWzUn6airTL2O2qQ.xHIkMmFDpr9WjJoww.vrOqo3wUZG.L2', '12345678', 'Choose', 'zan9et jerbi', '2025-04-29 10:14:06');
 
 --
 -- Constraints for dumped tables
