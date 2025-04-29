@@ -1,7 +1,4 @@
-
-
 <?php
-
 function fetchMenSneakers($conn){
 
     $query = "SELECT * FROM Sneakers where category='MEN'";

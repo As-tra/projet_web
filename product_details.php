@@ -2,7 +2,7 @@
 include_once "includes/database.php";
 include_once "includes/functions.php";
 
-// Fetch the ID from URL
+
 if (isset($_GET['id'])) {
     $product_id = $_GET['id'];
     $product = fetchProductById($conn, $product_id);

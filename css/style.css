@@ -9,9 +9,9 @@ body {
     overflow-x: hidden;
 }
 :root {
-    --a: #643ab8;
+    --a: #603ab0;
     --s: #10cab7;
-    --c: #f6f6f6;
+    --c: #FAFAFA;
     --amir: #fff;
 }
 html{
@@ -88,35 +88,7 @@ header .container .links > i{
     cursor: pointer;
     display: none;
 }
-/*resize for phone and small screnn*/
-@media (max-width:767px) {
-    header .container .links > i{
-        display: block;
-    }
-    header .container .links ul{
-        display: none;
-
-    }
-    header .container .links ul li{
-        border-bottom: 1px solid var(--b);
-        padding: 10px;
-    }
-    header .container .links .coffer{
-        display: none;
-    }
-    header .container .links:hover ul{
-        display: flex;
-        position: absolute;
-        right: 0;
-        gap: 40px;
-        list-style: none;
-        flex-direction: column;
-        background: #333;
-        width: 300px;
-        padding: 15px;
-        z-index: 10;
-    }
-}
+/* phone screen */
 @media (max-width:400px) {
     header .container .links:hover ul{
         width: 250px;

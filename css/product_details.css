@@ -54,6 +54,7 @@
 .sizes button {
     background: none;
     border: 1px solid #858585;
+    color: #858585;
     padding: 8px 12px;
     margin-right: 5px;
     margin-bottom: 5px;
@@ -79,11 +80,11 @@
 }
 .buttons .heart {
     padding: 0px;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     color: var(--a);
     background-color: white;
-    border-color: var(--a);
+    border:  solid 2px var(--a);
     border-radius: 50%;
 }
 .add-to-cart {
