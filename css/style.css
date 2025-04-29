@@ -2,15 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border-style: none;
 }
 body {
     font-family: 'Cairo','sans-serif';
     overflow-x: hidden;
 }
 :root {
-    --a: #6d39c2;
+    --a: #603ab0;
     --s: #10cab7;
-    --c: #f6f6f6;
+    --c: #FAFAFA;
     --amir: #fff;
 }
 html{
@@ -87,35 +88,7 @@ header .container .links > i{
     cursor: pointer;
     display: none;
 }
-/*resize for phone and small screnn*/
-@media (max-width:767px) {
-    header .container .links > i{
-        display: block;
-    }
-    header .container .links ul{
-        display: none;
-
-    }
-    header .container .links ul li{
-        border-bottom: 1px solid var(--b);
-        padding: 10px;
-    }
-    header .container .links .coffer{
-        display: none;
-    }
-    header .container .links:hover ul{
-        display: flex;
-        position: absolute;
-        right: 0;
-        gap: 40px;
-        list-style: none;
-        flex-direction: column;
-        background: #333;
-        width: 300px;
-        padding: 15px;
-        z-index: 10;
-    }
-}
+/* phone screen */
 @media (max-width:400px) {
     header .container .links:hover ul{
         width: 250px;
@@ -125,7 +98,6 @@ header .container .links > i{
 /*end header*/
 /*start view*/
 .view {
-    /* background-color: black; */
     background-image: url('../image/bg.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -396,6 +368,11 @@ header .container .links > i{
 .banner .container img {
     max-width: 450px;
     max-height: 360px;
+    transition: transform 1.5s ease;
+    cursor: pointer;
+}
+.banner .container img:hover{
+    transform: rotate(360deg) scale(0.8);
 }
 .banner .container .content{
     display: flex;
@@ -447,6 +424,7 @@ header .container .links > i{
     background-position: 100%;
     color: #101010;
 }
+/*small screen*/
 @media (max-width:991px) {
     .banner .container img {
         display: none;
@@ -463,9 +441,6 @@ header .container .links > i{
 /*end banner*/
 
 /*start women*/
-.women .container > h1 {
-    color: var(--a);
-}
 
 .women .des h4{
     color: #fff;
