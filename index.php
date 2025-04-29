@@ -4,6 +4,7 @@ include_once "includes/functions.php";
 
 $men_sneakers = fetchMenSneakers($conn);
 $women_sneakers = fetchWomenSneakers($conn);
+$showPopup = isset($_GET['signup']) && $_GET['signup'] === 'success';
 
 ?>
 
@@ -23,6 +24,24 @@ $women_sneakers = fetchWomenSneakers($conn);
 </head>
 
 <body>
+    <?php if ($showPopup): ?>
+    <div class="popup-overlay" id="popup">
+        <div class="popup-box">
+        <h2>Signup Successful!</h2>
+        <p>Welcome! You are now registered.</p>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+        document.getElementById('popup').classList.add('hidden');
+        // Optionally remove the URL parameter after hiding
+        const url = new URL(window.location);
+        url.searchParams.delete('signup');
+        window.history.replaceState({}, document.title, url);
+        }, 3000);
+    </script>
+    <?php endif; ?>
     <header>
         <div class="container">
             <i class="fa-solid fa-gem">Vortex</i>

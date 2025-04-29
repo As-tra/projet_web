@@ -41,11 +41,11 @@ if (!isset($_SESSION['cart'])) {
 
     <header>
         <div class="container">
-            <i class="fa-solid fa-gem">Vortex</i>
+            <i class="fa-solid fa-gem" onclick="window.location.href='index.php'">Vortex</i>
             <div class="links">
                 <i class="fa-solid fa-bars"></i>
                 <ul>
-                    <li class="coffer"><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                    <li class="coffer"><a href="signup.html"><i class="fa-solid fa-user"></i></a></li>
                     <li class="coffer"><a href="cart.php"><i class="fa-solid fa-bag-shopping"></i></a></li>
                 </ul>
             </div>
@@ -100,7 +100,7 @@ if (!isset($_SESSION['cart'])) {
                 }
                 ?>
                 <p>Total: <span class="summary-price">$<?php echo number_format($total, 2); ?></span></p>
-                <button class="checkout-btn">Check out</button>
+                <button class="checkout-btn" onclick="window.location.href='payment.php'">Check out</button>
             </div>
         </div>
     </main>

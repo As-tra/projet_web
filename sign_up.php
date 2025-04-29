@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $dob = $_POST['dob'];
     $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Always hash the password
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $phone = $_POST['phone'];
     $city = $_POST['city'];
     $address = $_POST['address'];
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         mysqli_stmt_bind_param($stmt, "ssssssss", $fullName, $username, $dob, $email, $password, $phone, $city, $address);
 
         if (mysqli_stmt_execute($stmt)) {
-            header("Location: index.php");
+            header("Location: index.php?signup=success");
             exit(); 
         } else {
             echo "Error: Could not execute the query.";
