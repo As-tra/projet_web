@@ -1,79 +1,4 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-/*start header*/
-header {
-    padding: 25px 0;
-    background-image: linear-gradient(100deg,#6d39c2,#10cab7);
-}
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-header .container .links ul{
-    display: flex;
-    gap: 25px;
-    list-style: none;
-}
-header .container .links{
-    position: relative;
-}
-header .container .links ul li{
-    font-size: 18px;
-}
-header .container .links ul a{
-    text-decoration: none;
-    color: #6a1b9a;
-    transition: 0.3s;
-    font-weight: 600;
-}
-header .container .links ul a:hover{
-    color: white;
-    text-decoration: underline;
-}
-header .container > i{
-    font-size: 22px;
-    color: white;
-}
-header .first {
-    text-decoration: none;
-    font-size: 22px;
-    color: white;
-}
-header .container .links > i{
-    color: white;
-    font-size: 25px;
-    cursor: pointer;
-    display: none;
-}
-/*resize for phone and small screnn*/
-@media (max-width:767px) {
-    header .container .links > i{
-        display: block;
-    }
-    header .container .links .coffer{
-        display: none;
-    }
-}
-@media (max-width:400px) {
-    header .container .links:hover ul{
-        width: 250px;
-        top: 50px;
-    }
-}
-/*end header*/
-  
-/* Main Content */
+  /* Main Content */
   .wrapper {
     padding: 62px;
   }
@@ -85,7 +10,7 @@ header .container .links > i{
   }
   
   .title {
-    color: #6a1b9a;
+    color: var(--a);
     margin: 0 0 20px 25px;
   }
   
@@ -149,7 +74,7 @@ header .container .links > i{
   }
   
   .new-price {
-    color: #6a1b9a;
+    color: var(--a);
     font-weight: bold;
     font-size: 18px;
   }
@@ -178,8 +103,8 @@ header .container .links > i{
   
   .quantity button {
     background-color: transparent;
-    border: 2px solid #6a1b9a;
-    color: #6a1b9a;
+    border: 2px solid var(--a);
+    color: var(--a);
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -193,14 +118,14 @@ header .container .links > i{
     border: none;
     cursor: pointer;
     font-size: 20px;
-    color: #6a1b9a;
+    color: var(--a);
     margin-left: 20px;
   }
 input[type='checkbox'] {
     background: #f1f1f1;
     width: 24px;
     height: 24px;
-    accent-color: #6a1b9a;
+    accent-color: var(--a);
 }
   /* Order Summary */
   .order-summary {
@@ -224,12 +149,12 @@ input[type='checkbox'] {
   
   .summary-price {
     font-weight: bold;
-    color: #6a1b9a;
+    color: var(--a);
   }
   
   .checkout-btn {
     width: 100%;
-    background-color: #6a1b9a;
+    background-color: var(--a);
     color: white;
     border: none;
     padding: 1rem;
@@ -240,6 +165,5 @@ input[type='checkbox'] {
   }
   
   .checkout-btn:hover {
-    background-color: #53177f;
+    background-color: var(--a);
   }
-  
